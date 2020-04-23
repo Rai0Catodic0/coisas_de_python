@@ -1,0 +1,14 @@
+# coding: utf-8
+import numpy as np
+a = [1,2,3,4]
+a*3
+a = np.array([1,2,3,4])
+a*3
+from random import randint
+get_ipython().run_line_magic('timeit', '-n 1000 -r 10 []')
+get_ipython().run_line_magic('timeit', '-n 1000 -r 10 list()')
+get_ipython().run_line_magic('timeit', '-n 1000 -r 10 [randint(0,9) for _ in range(1000)]')
+a = [randint(0,9) for _ in range(1000)]
+get_ipython().run_line_magic('timeit', '-n 1000 -r 10 np.array(a)')
+get_ipython().run_line_magic('save', 'array_Do_numpy.ipy')
+get_ipython().run_line_magic('save', 'array_numpy.ipy 1-13')
